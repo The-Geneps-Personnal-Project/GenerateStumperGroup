@@ -62,14 +62,14 @@ def make_groups(parsed_subjects):
                 used_logins.append(parsed_subjects[j]['Login'])
     # If there's one member left, add them to an existing pair to make it a trio
     if len(parsed_subjects) % 2 != 0:
-        # Find an existing pair with at least 6 common subjects
+        # Get the last member
+        last_member = parsed_subjects[-1]
+        # Find a group with at least 6 common subjects
         for group in groups:
-            if len(set(group[0].keys()).intersection(set(parsed_subjects[-1].keys()))) > 6:
-                group.append(parsed_subjects[-1])
+            common_subjects = set(group[0].keys()).intersection(set(group[1].keys()))
+            if len(common_subjects) > 6:
+                group.append(last_member)
                 break
-        else:
-            # If no existing pair is found, create a new single-member group
-            groups.append([parsed_subjects[-1]])
     save_groups(groups)
 
 
