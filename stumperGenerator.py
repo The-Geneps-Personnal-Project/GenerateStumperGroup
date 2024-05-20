@@ -29,8 +29,9 @@ def save_groups(groups):
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['master', 'member0', 'common_subjects'])
         for group in groups:
-            # Find all the subjects in common between the two members
+            # Find all the subjects in common between the two members except the key Login
             common_subjects = set(group[0].keys()).intersection(set(group[1].keys()))
+            common_subjects.discard("Login")
             if len(group) > 2:
                 common_subjects = common_subjects.intersection(set(group[2].keys()))
                 writer.writerow([group[0]['Login'], group[1]['Login'], group[2]['Login'],  common_subjects])
