@@ -1,0 +1,4 @@
+master;member0;common_subjects
+example@epitech.eu;auto@epitech.eu;{'Subject8', 'Subject14', 'Subject19', 'Subject6', 'Subject12', 'Subject17', 'Subject9'}
+julien@epitech.eu;stumper@epitech.eu;{'Subject14', 'Subject6', 'Subject18', 'Subject12', 'Subject2', 'Subject17', 'Subject5', 'Subject10', 'Subject4'}
+script@epitech.eu;bobby@epitech.eu;stumper@epitech.eu;{'Subject8', 'Subject14', 'Subject12', 'Subject2', 'Subject17', 'Subject9'}
